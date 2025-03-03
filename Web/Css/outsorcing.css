@@ -1,0 +1,749 @@
+:root {
+  --primary: #0078ff;
+  --secondary: #00c6ff;
+  --dark: #121212;
+  --darker: #0a0a0a;
+  --light: #ffffff;
+  --gray: #1e1e1e;
+  --medium-gray: #9e9e9e;
+  --light-gray: #2d2d2d;
+  --text-color: #e0e0e0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--dark);
+  overflow-x: hidden;
+  color: var(--text-color);
+}
+
+.container {
+  width: 90%;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header y Navegación */
+header {
+  background-color: var(--dark);
+  box-shadow: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.3);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.header-scrolled {
+  background-color: rgba(18, 18, 18, 0.95);
+  box-shadow: 0 0.3125rem 1.25rem rgba(0, 0, 0, 0.3);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9375rem 0;
+  color: var(--light);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 2.5rem;
+  margin-right: 0.625rem;
+  filter: brightness(0) invert(1);
+}
+
+.logo-text {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--light);
+}
+
+.logo-text span {
+  color: var(--secondary);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  /*  flex-wrap: wrap;  No es necesario si usamos flex-direction: column en mobile */
+  justify-content: center;
+}
+
+.nav-links li {
+  margin-left: 1.25rem;
+  margin-bottom: 0.5rem; /*  Este margen inferior se gestiona mejor en mobile */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--light);
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  position: relative;
+  display: block;
+  padding: 0.5rem 0;
+}
+
+.nav-links a:hover {
+  color: var(--secondary);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0.125rem;
+  background-color: var(--secondary);
+  bottom: -0.3125rem;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.cta-button {
+  background-color: var(--primary);
+  color: var(--light) !important;
+  padding: 1rem 2rem;
+  border-radius: 1.875rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  font-size: 0.9rem;
+}
+
+.cta-button:hover {
+  background-color: var(--secondary);
+  transform: translateY(-0.1875rem);
+  box-shadow: 0 0.3125rem 0.9375rem rgba(235, 236, 236, 0.3);
+}
+
+.cta-button::after {
+  display: none;
+}
+
+.toggle-menu {
+  display: none; /* Oculto por defecto, se muestra en mobile */
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--light);
+}
+
+
+/* Hero Section */
+.hero-section {
+  background-color: var(--darker);
+  padding: 10rem 0 5rem;  /* Ajusta el padding superior para el header fijo */
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 600px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.hero-content h1 span {
+  color: var(--secondary);
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap; /* Permite que los botones se envuelvan en pantallas pequeñas */
+}
+
+.primary-button, .secondary-button { /* Estilos comunes para ambos botones */
+  padding: 1rem 2rem;
+  border-radius: 1.875rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block; /* Para que respeten el padding */
+}
+
+.primary-button {
+  background-color: var(--primary);
+  color: var(--light);
+}
+
+.primary-button:hover {
+  background-color: var(--secondary);
+  transform: translateY(-0.1875rem);
+  box-shadow: 0 0.3125rem 0.9375rem rgba(0, 198, 255, 0.3);
+}
+
+
+.secondary-button {
+  background-color: transparent;
+  color: var(--light);
+  border: 2px solid var(--primary);
+}
+
+.secondary-button:hover {
+  background-color: var(--primary);
+  transform: translateY(-0.1875rem);
+}
+
+.hero-image {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40%;
+  z-index: 1;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0 1.5rem rgba(0, 198, 255, 0.4));
+}
+
+/* Section Header (usado en varias secciones) */
+.section-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.section-header h2 span {
+  color: var(--secondary);
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.8;
+}
+/* Beneficios */
+.benefits-section {
+  padding: 5rem 0;
+  background-color: var(--dark);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  /* Usamos grid-column-gap y grid-row-gap en lugar de gap */
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+  justify-content: center; /* Centra horizontalmente las *columnas* */
+}
+
+.benefit-card {
+  background-color: var(--gray);
+  border-radius: 0.625rem;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  /* No necesitamos width: 100% ni max-width aquí */
+}
+/* ... resto de los estilos de .benefit-card ... */
+.benefit-card:hover {
+  transform: translateY(-0.625rem);
+  box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.2);
+}
+
+.benefit-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.25rem;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--primary), var(--secondary));
+  transition: all 0.3s ease;
+}
+
+.benefit-card:hover::before {
+  width: 0.5rem;
+}
+
+.benefit-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--secondary);
+}
+
+.benefit-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.benefit-card p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+/* Media query para pantallas más grandes (opcional, pero recomendada) */
+@media (min-width: 769px) {
+.benefits-grid {
+      /* En pantallas grandes, distribuimos el espacio *alrededor* */
+      justify-content: space-around;
+}
+}
+
+/* Sección Alianza */
+.alianza-section {
+  background-color: var(--dark); /* Mantén el fondo oscuro o ajústalo según tu diseño */
+  padding: 5rem 0;
+}
+
+.alianza-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 2rem;
+  align-items: center;
+}
+
+.alianza-imagen img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.625rem;
+  box-shadow: 0 0.3125rem 1.25rem rgba(0, 0, 0, 0.3);
+}
+
+.alianza-texto h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #fff; /* Texto principal en blanco */
+}
+
+/* Aplica el color azul (o el que uses en tu sitio) a la palabra "Outsourcing" */
+.alianza-texto h2 span {
+  color: var(--secondary);
+}
+
+.alianza-texto p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: var(--text-color); /* Ajusta para mantener coherencia con el resto de tu sitio */
+  max-width: 600px;
+}
+
+/* Responsividad para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .alianza-container {
+    grid-template-columns: 1fr; 
+  }
+  .alianza-texto {
+    margin-top: 2rem;
+  }
+}
+
+
+
+/* Proceso */
+.process-section {
+  padding: 5rem 0;
+  background-color: var(--dark);
+  position: relative;
+}
+
+.process-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.process-steps::before {
+  content: '';
+  position: absolute;
+  left: 2.5rem;
+  top: 0;
+  height: 100%;
+  width: 0.125rem;
+  background-color: var(--light-gray);
+  z-index: 1;
+}
+
+.process-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.step-number {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: var(--light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  flex-shrink: 0; /* Evita que el número se encoja */
+}
+
+.step-content {
+  flex: 1; /* Permite que el contenido ocupe el espacio restante */
+}
+
+.step-content h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.step-content p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Casos de Éxito */
+.cases-section {
+  padding: 5rem 0;
+  background-color: var(--darker);
+}
+
+.cases-slider {
+  display: flex;
+  overflow-x: auto; /* Permite el scroll horizontal */
+  gap: 2rem;
+  padding-bottom: 1rem; /* Espacio para los botones de navegación */
+  scroll-snap-type: x mandatory; /* Mejora la experiencia de scroll */
+}
+
+.case-card {
+  background-color: var(--gray);
+  border-radius: 0.625rem;
+  padding: 2rem;
+  min-width: 250px; /* Ancho mínimo para cada tarjeta */
+  scroll-snap-align: start; /* Alinea las tarjetas al inicio */
+  box-shadow: 0 0.3rem 0.6rem rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.case-card:hover {
+  transform: scale(1.05);
+}
+
+.case-logo {
+  margin-bottom: 1rem;
+}
+
+.case-logo img {
+  max-width: 100%; /* Asegura que la imagen no se desborde */
+  height: auto;
+  filter: brightness(0) invert(1); /* Invierte los colores del logo */
+}
+
+.case-content h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.case-content p {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.8;
+}
+
+.case-category {
+  font-size: 0.8rem;
+  color: var(--secondary);
+  display: block; /* Para que ocupe toda la línea */
+}
+
+.cases-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem; /* Espacio entre el slider y los botones */
+}
+
+.cases-navigation button {
+  background-color: var(--primary);
+  color: var(--light);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cases-navigation button:hover {
+  background-color: var(--secondary);
+}
+
+/* CTA */
+.cta-section {
+  padding: 5rem 0;
+  background-color: var(--dark);
+  text-align: center;
+}
+
+.cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.cta-content p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.8;
+}
+
+
+/* Footer */
+footer {
+  background-color: var(--darker);
+  color: var(--text-color);
+  padding: 4rem 0 1rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.footer-column h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  position: relative;
+  padding-bottom: 0.625rem;
+}
+
+.footer-column h3::after {
+  content: '';
+  position: absolute;
+  width: 2.5rem;
+  height: 0.1875rem;
+  background-color: var(--primary);
+  bottom: 0;
+  left: 0;
+}
+
+.footer-column p {
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  background-color: var(--light-gray);
+  border-radius: 50%;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.social-links a:hover {
+  background-color: var(--primary);
+  color: var(--light);
+  transform: translateY(-0.1875rem);
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+  display: flex;
+  align-items: center;
+  color: var(--medium-gray);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+  color: var(--secondary);
+  transform: translateX(0.3125rem);
+}
+
+.footer-links a i {
+  margin-right: 0.4rem;
+  font-size: 0.7rem;
+}
+
+.contact-info {
+  list-style: none;
+}
+
+.contact-info li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.contact-info li i {
+  width: 1.6rem;
+  height: 1.6rem;
+  background-color: var(--light-gray);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.75rem;
+  color: var(--primary);
+  font-size: 0.9rem;
+}
+
+.contact-info li p {
+  margin: 0;
+  color: var(--medium-gray);
+  font-size: 0.9rem;
+}
+
+.footer-bottom {
+  border-top: 0.0625rem solid var(--light-gray);
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 0.8rem;
+  color: var(--medium-gray);
+}
+
+/* Media Queries para Responsividad */
+
+/* Tabletas */
+@media (max-width: 768px) {
+  .nav-links {
+      display: none; /* Oculta los enlaces por defecto */
+      flex-direction: column; /* Apila los enlaces verticalmente */
+      width: 100%; /* Ocupa todo el ancho */
+      position: absolute; /* Posiciona el menú */
+      top: 100%; /* Justo debajo del header */
+      left: 0;
+      background-color: var(--dark); /* Mismo fondo que el header */
+      padding: 1rem 0; /* Padding para el menú */
+      box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2); /* Sombra */
+  }
+
+   .nav-links.active {
+      display: flex; /* Muestra el menú cuando tiene la clase 'active' */
+  }
+
+  .nav-links li {
+      margin: 0; /* Resetear margenes */
+      text-align: center; /* Centra los enlaces */
+      width: 100%; /* Ocupa todo el ancho disponible */
+  }
+
+  .nav-links a {
+      padding: 1rem; /* Aumenta el padding para hacerlos más clickeables */
+      display: block; /* Para que ocupen todo el ancho */
+  }
+
+  .toggle-menu {
+      display: block; /* Muestra el botón del menú */
+  }
+
+  .hero-image {
+      position: static; /* Cambia la posición a estática */
+      width: 80%; /* Ajusta el ancho */
+      margin: 2rem auto 0; /* Centra la imagen */
+      transform: none; /* Elimina la transformación */
+  }
+
+  .hero-content {
+       text-align: center;
+  }
+  .hero-buttons{
+      justify-content: center;
+  }
+  .process-steps::before {
+      left: 1.5rem; /* Ajusta la posición de la línea */
+  }
+  .step-number{
+      margin-left: -1rem;
+  }
+
+  .cases-navigation {
+      display: none; /* Oculta los botones en mobile, ya que el scroll es táctil */
+  }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+  .hero-content h1 {
+      font-size: 2.5rem; /* Reduce el tamaño del título */
+  }
+   .hero-image {
+      width: 100%;
+  }
+  .section-header h2 {
+      font-size: 2rem; /* Reduce el tamaño del título de sección */
+  }
+
+  .cta-content h2 {
+      font-size: 1.8rem; /* Reduce el tamaño del título del CTA */
+  }
+
+  .footer-content {
+      grid-template-columns: 1fr; /* Una sola columna en mobile */
+  }
+}
