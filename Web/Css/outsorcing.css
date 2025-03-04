@@ -261,10 +261,8 @@ header {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 2rem;
-  /* Usamos grid-column-gap y grid-row-gap en lugar de gap */
-  grid-column-gap: 2rem;
-  grid-row-gap: 2rem;
-  justify-content: center; /* Centra horizontalmente las *columnas* */
+  justify-content: center; /* Centra las columnas horizontalmente */
+  align-items: stretch;    /* Estira todas las tarjetas al alto de la más alta en cada fila */
 }
 
 .benefit-card {
@@ -274,9 +272,16 @@ header {
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  /* No necesitamos width: 100% ni max-width aquí */
+
+  /* Hace que el contenido se distribuya en columna */
+  display: flex;          
+  flex-direction: column;
+  /* (Opcional) Si quieres que el contenido se expanda y 
+     se separe del fondo inferior, puedes usar:
+     justify-content: space-between;
+  */
 }
-/* ... resto de los estilos de .benefit-card ... */
+
 .benefit-card:hover {
   transform: translateY(-0.625rem);
   box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.2);
@@ -313,12 +318,13 @@ header {
   font-size: 0.9rem;
   opacity: 0.8;
 }
-/* Media query para pantallas más grandes (opcional, pero recomendada) */
+
+/* Media query para pantallas más grandes (opcional) */
 @media (min-width: 769px) {
-.benefits-grid {
-      /* En pantallas grandes, distribuimos el espacio *alrededor* */
-      justify-content: space-around;
-}
+  .benefits-grid {
+    /* En pantallas grandes, distribuimos el espacio alrededor */
+    justify-content: space-around;
+  }
 }
 
 /* Sección Alianza */
@@ -466,12 +472,17 @@ header {
 
 .case-logo {
   margin-bottom: 1rem;
+  height: 100px;               /* Altura fija para el contenedor de la imagen */
+  display: flex;
+  align-items: center;         /* Centra verticalmente la imagen */
+  justify-content: center;     /* Centra horizontalmente la imagen */
 }
 
 .case-logo img {
-  max-width: 100%; /* Asegura que la imagen no se desborde */
-  height: auto;
+  max-width: 100%;             /* Evita que la imagen se desborde del contenedor */
+  max-height: 100%;            /* Asegura que la imagen no exceda la altura definida */
   filter: brightness(0) invert(1); /* Invierte los colores del logo */
+  object-fit: contain;         /* Ajusta la imagen manteniendo su proporción */
 }
 
 .case-content h3 {
@@ -516,8 +527,12 @@ header {
 /* CTA */
 .cta-section {
   padding: 5rem 0;
-  background-color: var(--dark);
   text-align: center;
+  background-image: url(../images/bacck_out.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .cta-content {
@@ -535,6 +550,7 @@ header {
   font-size: 1.1rem;
   margin-bottom: 2rem;
   opacity: 0.8;
+  color:white;
 }
 
 
