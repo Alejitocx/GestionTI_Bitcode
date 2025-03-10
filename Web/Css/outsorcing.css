@@ -10,6 +10,7 @@
   --text-color: #e0e0e0;
 }
 
+
 * {
   margin: 0;
   padding: 0;
@@ -257,6 +258,20 @@ header {
   background-color: var(--dark);
 }
 
+/* Estado inicial de las tarjetas */
+.benefit-card {
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  transition: all 0.8s ease-out;
+}
+
+/* Estado visible (al activarse la animación) */
+.benefit-card.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+
 .benefits-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -329,7 +344,7 @@ header {
 
 /* Sección Alianza */
 .alianza-section {
-  background-color: var(--dark); /* Mantén el fondo oscuro o ajústalo según tu diseño */
+  background-color: var(--darker); /* Mantén el fondo oscuro o ajústalo según tu diseño */
   padding: 5rem 0;
 }
 
@@ -378,69 +393,83 @@ header {
 
 
 
-/* Proceso */
-.process-section {
-  padding: 5rem 0;
-  background-color: var(--dark);
-  position: relative;
-}
+  /* Proceso de desarrollo con animación */
+    .process-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
 
-.process-steps {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  max-width: 800px;
-  margin: 0 auto;
-  position: relative;
-}
+    .process-step {
+      display: flex;
+      gap: 1.5rem;
+      position: relative;
+    }
 
-.process-steps::before {
-  content: '';
-  position: absolute;
-  left: 2.5rem;
-  top: 0;
-  height: 100%;
-  width: 0.125rem;
-  background-color: var(--light-gray);
-  z-index: 1;
-}
+    .process-step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 1.5rem;
+      top: 3.5rem;
+      width: 0.125rem;
+      height: calc(100% + 2rem);
+      background: linear-gradient(to bottom, var(--primary), var(--secondary));
+    }
 
-.process-step {
-  display: flex;
-  align-items: flex-start;
-  gap: 2rem;
-  position: relative;
-  z-index: 2;
-}
+    .step-number {
+      background: linear-gradient(to bottom right, var(--primary), var(--secondary));
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--light);
+      flex-shrink: 0;
+      z-index: 1;
+    }
 
-.step-number {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-  background-color: var(--primary);
-  color: var(--light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 1.2rem;
-  flex-shrink: 0; /* Evita que el número se encoja */
-}
+    .step-content {
+      background-color: var(--light-gray);
+      border-radius: 0.625rem;
+      padding: 1.5rem;
+      flex-grow: 1;
+    }
 
-.step-content {
-  flex: 1; /* Permite que el contenido ocupe el espacio restante */
-}
+    .step-content h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: var(--secondary);
+    }
 
-.step-content h3 {
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-}
-
-.step-content p {
-  font-size: 0.9rem;
-  opacity: 0.8;
-}
+    /* Responsive fixes */
+    @media (max-width: 768px) {
+      .process-step {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      
+      .process-step:not(:last-child)::after {
+        left: 50%;
+        top: 3rem;
+        width: 0.125rem;
+        height: 2rem;
+        transform: translateX(-50%);
+      }
+      
+      .step-content {
+        width: 100%;
+      }
+      
+      .section-header h2 {
+        font-size: 2rem;
+      }
+    }
 
 /* Casos de Éxito */
 .cases-section {
@@ -459,7 +488,7 @@ header {
 .case-card {
   background-color: var(--gray);
   border-radius: 0.625rem;
-  padding: 2rem;
+  padding: 1rem;
   min-width: 250px; /* Ancho mínimo para cada tarjeta */
   scroll-snap-align: start; /* Alinea las tarjetas al inicio */
   box-shadow: 0 0.3rem 0.6rem rgba(0,0,0,0.2);
@@ -526,6 +555,7 @@ header {
 
 /* CTA */
 .cta-section {
+  position: relative; /* Necesario para posicionar el overlay */
   padding: 5rem 0;
   text-align: center;
   background-image: url(../images/bacck_out.jpg);
@@ -535,22 +565,41 @@ header {
   background-repeat: no-repeat;
 }
 
+/* Overlay que oscurece la imagen */
+.cta-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Ajusta la opacidad según necesites */
+  z-index: 1;
+}
+
+/* Asegura que el contenido esté por encima del overlay */
 .cta-content {
+  position: relative;
+  z-index: 2;
   max-width: 800px;
   margin: 0 auto;
 }
+
 
 .cta-content h2 {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8); /* Opcional: mejora la legibilidad */
+
 }
 
 .cta-content p {
   font-size: 1.1rem;
   margin-bottom: 2rem;
-  opacity: 0.8;
-  color:white;
+  color: var(--text-color);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8); /* Opcional: mejora la legibilidad */
+
 }
 
 
@@ -763,3 +812,4 @@ footer {
       grid-template-columns: 1fr; /* Una sola columna en mobile */
   }
 }
+

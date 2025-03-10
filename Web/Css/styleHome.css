@@ -94,7 +94,7 @@
     transition: all 0.3s ease;
     position: relative;
     display: block;
-    padding: 0.5rem;
+    padding: 0.5rem ;
   }
   
   .nav-links a:hover {
