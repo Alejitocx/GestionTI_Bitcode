@@ -94,7 +94,7 @@
     transition: all 0.3s ease;
     position: relative;
     display: block;
-    padding: 0.5rem 0;
+    padding: 0.5rem;
   }
   
   .nav-links a:hover {
@@ -115,16 +115,26 @@
   .nav-links a:hover::after {
     width: 100%;
   }
-  
+
   .cta-button {
     background-color: var(--primary);
     color: var(--light) !important;
-    padding: 1rem 2rem; /* Reducido el padding del botón */
+    padding: 1rem 2.5rem; /* Aumentar padding horizontal */
     border-radius: 1.875rem;
     font-weight: 600;
     transition: all 0.3s ease;
     white-space: nowrap;
-      font-size: 0.9rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    display: inline-block;
+    text-align: center;
+    
+}
+
+
+  .nav-links .cta-btn{
+    padding: 10px 20px 10px 20px;
+    margin-left: 1.25rem;
   }
   
   .cta-button:hover {
@@ -593,7 +603,7 @@
   
   .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); /* Reducido el ancho mínimo */
+    grid-template-columns: repeat(auto-fit, minmax(11.2rem, 1fr)); /* Reducido el ancho mínimo */
     gap: 1.5rem;
     margin-bottom: 2rem;
   }
