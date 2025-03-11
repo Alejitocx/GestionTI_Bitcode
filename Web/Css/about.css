@@ -24,6 +24,10 @@
     overflow-x: hidden;
     color: var(--text-color);
   }
+
+  h2 span {
+    color: var(--secondary);
+  }
   
   .container {
     width: 90%;
