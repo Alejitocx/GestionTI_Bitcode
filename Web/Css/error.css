@@ -1,0 +1,39 @@
+:root {
+    --primary: #0078ff;
+    --secondary: #00c6ff;
+    --dark: #121212;
+    --light: #ffffff;
+    --text-color: #e0e0e0;
+  }
+  
+/* error.css */
+.error-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: var(--dark);
+    text-align: center;
+  }
+  
+  .error-page .error-container {
+    padding: 2rem;
+    border: 2px solid var(--secondary);
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .error-page .error-container h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: var(--light);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  }
+  
+  .error-page .error-container p {
+    font-size: 1.5rem;
+    color: var(--text-color);
+  }
+  

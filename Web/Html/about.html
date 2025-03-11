@@ -11,26 +11,50 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-      <!-- Header -->
-      <header id="header">
+    <!-- Header -->
+    <header id="header">
         <div class="container">
             <nav class="navbar">
                 <div class="logo" id="logoContainer">
-                    <img src="../images/logo.png" alt="Bitcode Enterprise Logo">
+                    <a href="../Html/index.html">
+                        <img src="../images/logo.png" alt="Bitcode Enterprise Logo">
+                    </a>
                     <div class="logo-text" id="logoText">Bitcode <span>Enterprise</span></div>
                 </div>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="#home">Inicio</a></li>
-                    <li><a href="#services">Servicios</a></li>
-                    <li><a href="#products">Productos</a></li>
-                    <li><a href="#about">Nosotros</a></li>
-                    <li><a href="#contact">Contacto</a></li>
+                <ul class="nav-links">
+                    <li class="nav-item sub-parent"><a href="../Html/index.html">Inicio</a></li>
+                    <li class="nav-item sub-parent">
+                        <a href="#">Servicios</a>
+                        <div class="sub-menu">
+                            <div class="sub-column">
+                                <h3>Servicios</h3>
+                                <a href="../Html/outsorcing.html">Outsourcing</a>
+                                <a href="../Html/error.html">Software a medida</a>
+                                <a href="../Html/error.html">Sitios Web</a>
+                                <a href="../Html/apis.html">API.s</a>
+                                <a href="../Html/error.html">Aplicaciones</a>
+                                <a href="../Html/error.html">QA</a>
+                                <a href="../Html/optproceso.html">Optimización del proceso</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item sub-parent">
+                        <a href="#">Productos</a>
+                        <div class="sub-menu">
+                            <div class="sub-column">
+                                <h3>Productos</h3>
+                                <a href="#">Analytics BI Camera</a>
+                                <a href="../Html/error.html">Administrador de Espacios</a>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li><a href="../Html/about.html">Nosotros</a></li>
+                    <li><a href="">Contacto</a></li>
                     <li><a href="#" class="cta-button"> Agenda tu cita </a></li>
                 </ul>
-                <div class="toggle-menu" id="toggleMenu">
-                    <i class="fas fa-bars"></i>
-                </div>
             </nav>
+            
         </div>
     </header>
 
@@ -179,82 +203,81 @@
     </div>
 </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Sobre Nosotros</h3>
-                    <p>Bitcode Enterprise es una empresa líder en servicios de software y transformación digital, comprometida con la innovación y la excelencia.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Sobre Nosotros</h3>
+                <p>Bitcode Enterprise es una empresa líder en servicios de software y transformación digital, comprometida con la innovación y la excelencia.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/bitcodeenterprise"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="https://cr.linkedin.com/company/bitcode-enterprise"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/bitcodeenterprise/"><i class="fab fa-instagram"></i></a>
                 </div>
-                <div class="footer-column">
-                    <h3>Servicios</h3>
-                    <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Outsourcing</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Software a medida</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Sitios web</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> API.s</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Aplicaciones</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> QA</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Optimización del proceso</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Productos</h3>
-                    <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Analytics BI Camera</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Administrador de Espacios</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Colombia</h3>
-                    <ul class="contact-info">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <p>Calle 26 102-20</p>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            <p>+57 305 332-5587</p>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <p>info.bitcode-enterprise.com</p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Costa Rica</h3>
-                    <ul class="contact-info">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <p>Regus - San Jose Plaza Roble Las Terrazas, 5o Piso
-                            </p>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            <p>+506 8665-8537</p>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <p>info.bitcode-enterprise.com</p>
-                        </li>
-                    </ul>
-                </div>
-                
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Bitcode Enterprise. Todos los derechos reservados.</p>
+            <div class="footer-column">
+                <h3>Servicios</h3>
+                <ul class="footer-links">
+                    <li><a href="../Html/outsorcing.html"><i class="fas fa-chevron-right"></i> Outsourcing</a></li>
+                    <li><a href="../Html/error.html"><i class="fas fa-chevron-right"></i> Software a medida</a></li>
+                    <li><a href="../Html/error.html"><i class="fas fa-chevron-right"></i> Sitios web</a></li>
+                    <li><a href="../Html/apis.html"><i class="fas fa-chevron-right"></i> API.s</a></li>
+                    <li><a href="../Html/error.html"><i class="fas fa-chevron-right"></i> Aplicaciones</a></li>
+                    <li><a href="../Html/error.html"><i class="fas fa-chevron-right"></i> QA</a></li>
+                    <li><a href="../Html/optproceso.html"><i class="fas fa-chevron-right"></i> Optimización del proceso</a></li>
+                </ul>
             </div>
+            <div class="footer-column">
+                <h3>Productos</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Analytics BI Camera</a></li>
+                    <li><a href="../Html/error.html"><i class="fas fa-chevron-right"></i> Administrador de Espacios</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Colombia</h3>
+                <ul class="contact-info">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Calle 26 102-20</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <p>+57 305 332-5587</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <p>info.bitcode-enterprise.com</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Costa Rica</h3>
+                <ul class="contact-info">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Regus - San Jose Plaza Roble Las Terrazas, 5o Piso
+                        </p>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <p>+506 8665-8537</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <p>info.bitcode-enterprise.com</p>
+                    </li>
+                </ul>
+            </div>
+            
         </div>
-    </footer>
-
+        <div class="footer-bottom">
+            <p>&copy; 2025 Bitcode Enterprise. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
    <!-- Scripts -->
    <script src="../Js/jsHome.js"></script>
     <script>
