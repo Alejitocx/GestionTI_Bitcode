@@ -551,25 +551,52 @@ header {
     font-size: 0.9rem;
 }
 
-/* CTA Section */
-.cta {
-  padding: 4rem 0; /* Reducido el padding */
-  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-  color: var(--light);
+.cta-section {
+  position: relative; /* Necesario para posicionar el overlay */
+  padding: 5rem 0;
   text-align: center;
+  background-image: url(../images/bacck_out.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.cta h2 {
-  font-size: 2.2rem; /* Reducido el tamaño de fuente */
+/* Overlay que oscurece la imagen */
+.cta-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Ajusta la opacidad según necesites */
+  z-index: 1;
+}
+
+/* Asegura que el contenido esté por encima del overlay */
+.cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
+.cta-content h2 {
+  font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8); /* Opcional: mejora la legibilidad */
+
 }
 
-.cta p {
-  font-size: 1rem; /* Reducido el tamaño de fuente */
-  opacity: 0.9;
-  max-width: 43.75rem;
-  margin: 0 auto 1.5rem; /* Reducido el margen */
+.cta-content p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8); /* Opcional: mejora la legibilidad */
+
 }
 
 .cta-btn {

@@ -21,7 +21,7 @@
                     </a>
                     <div class="logo-text" id="logoText">Bitcode <span>Enterprise</span></div>
                 </div>
-                <ul class="nav-links">
+                <ul id="navLinks"  class="nav-links">
                     <li class="nav-item sub-parent"><a href="../Html/index.html">Inicio</a></li>
                     <li class="nav-item sub-parent">
                         <a href="#">Servicios</a>
@@ -43,7 +43,7 @@
                         <div class="sub-menu">
                             <div class="sub-column">
                                 <h3>Productos</h3>
-                                <a href="#">Analytics BI Camera</a>
+                                <a href="../Html/camera.html">Analytics BI Camera</a>
                                 <a href="../Html/error.html">Administrador de Espacios</a>
                             </div>
                         </div>
@@ -53,12 +53,16 @@
                     <li><a href="">Contacto</a></li>
                     <li><a href="#" class="cta-button"> Agenda tu cita </a></li>
                 </ul>
+                <div class="toggle-menu" id="toggleMenu">
+                    <i class="fas fa-bars"></i>
+                </div>
             </nav>
             
         </div>
     </header>
 <!-- Hero Section -->
 <section class="hero" id="home">
+    <br><br>
     <div class="container">
       <div class="hero-content">
         <!-- Texto de la sección Hero -->
@@ -97,12 +101,22 @@
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-laptop-code"></i>
+                        <i class="fas fa-users-cog"></i>
                     </div>
                     <div class="service-content">
-                        <h3>Desarrollo de Software</h3>
-                        <p>Creamos software a medida para cubrir necesidades específicas de tu empresa, con tecnologías modernas y procesos ágiles.</p>
-                        <a href="#" class="service-link">Más información <i class="fas fa-chevron-right"></i></a>
+                        <h3>Outsourcing</h3>
+                        <p>Enfoque a su empresa en el negocio, delegándonos el manejo de personal de trabajo especializado…</p>
+                        <a href="../Html/outsorcing.html" class="service-link">Más información <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>API's</h3>
+                        <p>Interfaz que permite enlazar y conectar tus datos con los clientes y otros agentes externos</p>
+                        <a href="../Html/apis.html" class="service-link">Más información <i class="fas fa-chevron-right"></i></a>
                     </div>
                 </div>
                 <div class="service-card">
@@ -111,8 +125,8 @@
                     </div>
                     <div class="service-content">
                         <h3>Aplicaciones Móviles</h3>
-                        <p>Desarrollamos apps nativas y multiplataforma que ofrecen experiencias excepcionales en iOS y Android.</p>
-                        <a href="#" class="service-link">Más información <i class="fas fa-chevron-right"></i></a>
+                        <p>Apps móviles con tecnología como Flutter para desarrollar aplicaciones mucho más rápido.</p>
+                        <a href="../Html/error.html" class="service-link">Más información <i class="fas fa-chevron-right"></i></a>
                     </div>
                 </div>
                 <div class="service-card">
@@ -121,18 +135,8 @@
                     </div>
                     <div class="service-content">
                         <h3>Diseño Web Responsive</h3>
-                        <p>Creamos sitios web modernos, responsivos y optimizados para brindar la mejor experiencia en cualquier dispositivo.</p>
-                        <a href="#" class="service-link">Más información <i class="fas fa-chevron-right"></i></a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-users-cog"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Outsourcing de TI</h3>
-                        <p>Ofrecemos servicios de outsourcing con profesionales altamente calificados para tus proyectos tecnológicos.</p>
-                        <a href="#" class="service-link">Más información <i class="fas fa-chevron-right"></i></a>
+                        <p>Una página web es fundamental en toda empresa para obtener mayor accesibilidad y visibilidad</p>
+                        <a href="../Html/error.html" class="service-link">Más información <i class="fas fa-chevron-right"></i></a>
                     </div>
                 </div>
                 <div class="service-card">
@@ -140,19 +144,19 @@
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <div class="service-content">
-                        <h3>Transformación Digital</h3>
-                        <p>Asesoramos en la transformación digital de tu empresa, implementando tecnologías que automatizan y optimizan procesos.</p>
-                        <a href="#" class="service-link">Más información <i class="fas fa-chevron-right"></i></a>
+                        <h3>Optimización de procesos</h3>
+                        <p>Buscamos la oportunidad de automatizar los procesos de su empresa.</p>
+                        <a href="../Html/optproceso.html" class="service-link">Más información <i class="fas fa-chevron-right"></i></a>
                     </div>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-cloud"></i>
+                        <i class="fa-brands fa-uncharted"></i>
                     </div>
                     <div class="service-content">
-                        <h3>Soluciones Cloud</h3>
-                        <p>Implementamos y gestionamos infraestructuras cloud seguras y escalables para tus aplicaciones y datos.</p>
-                        <a href="#" class="service-link">Más información <i class="fas fa-chevron-right"></i></a>
+                        <h3>QA</h3>
+                        <P>Sometemos nuestros proyectos bajo distintas pruebas de calidad en servidores dedicados.</P>
+                        <a href="../Html/error.html" class="service-link">Más información <i class="fas fa-chevron-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -203,30 +207,42 @@
 
     
   <!-- Nueva sección para las tarjetas de estadísticas -->
-  <section class="stats" id="stats">
+ <!-- Stats Section -->
+ <section class="stats">
     <div class="container">
-      <h2 class="section-title">Nuestras Estadísticas</h2>
-      <div class="stats-content">
-        <div class="stats-card">
-          <h4>+500</h4>
-          <p>Proyectos Completados</p>
+        <h2 class="section-title">Estadísticas de Impacto</h2>
+        <div class="stats-content">
+            <div class="stats-card">
+                <h4>+30%</h4>
+                <p>Incremento en eficiencia operativa</p>
+            </div>
+            <div class="stats-card">
+                <h4>-25%</h4>
+                <p>Reducción de costos operativos</p>
+            </div>
+            <div class="stats-card">
+                <h4>+40%</h4>
+                <p>Mejora en precisión de datos</p>
+            </div>
+            <div class="stats-card">
+                <h4>+200</h4>
+                <p>Clientes satisfechos</p>
+            </div>
         </div>
-        <div class="stats-card">
-          <h4>98%</h4>
-          <p>Clientes Satisfechos</p>
-        </div>
-      </div>
     </div>
-  </section>
+</section>
 
-    <!-- CTA Section -->
-    <section class="cta" id="contact">
-        <div class="container">
+
+<!-- CTA -->
+<section id="cta" class="cta-section">
+    <div class="container">
+        <div class="cta-content">
             <h2>¿Listo para transformar tu negocio?</h2>
             <p>Contáctanos hoy mismo y descubre cómo nuestras soluciones tecnológicas pueden impulsar el crecimiento de tu empresa.</p>
             <a href="#" class="cta-btn">Agenda una consulta gratuita <i class="fas fa-calendar-alt"></i></a>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer>
@@ -237,7 +253,6 @@
                     <p>Bitcode Enterprise es una empresa líder en servicios de software y transformación digital, comprometida con la innovación y la excelencia.</p>
                     <div class="social-links">
                         <a  target="_blank" href="https://www.facebook.com/bitcodeenterprise"><i class="fab fa-facebook-f"></i></a>
-                        <a target="_blank" href="#"><i class="fab fa-twitter"></i></a>
                         <a target="_blank" href="https://cr.linkedin.com/company/bitcode-enterprise"><i class="fab fa-linkedin-in"></i></a>
                         <a target="_blank" href="https://www.instagram.com/bitcodeenterprise/"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -257,7 +272,7 @@
                 <div class="footer-column">
                     <h3>Productos</h3>
                     <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Analytics BI Camera</a></li>
+                        <li><a href="../Html/camera.html"><i class="fas fa-chevron-right"></i> Analytics BI Camera</a></li>
                         <li><a href="../Html/error.html"><i class="fas fa-chevron-right"></i> Administrador de Espacios</a></li>
                     </ul>
                 </div>
